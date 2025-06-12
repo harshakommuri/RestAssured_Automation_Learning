@@ -4,6 +4,7 @@ import payload.AddBody;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
+
 public class Basics {
 
 	public static void main(String[] args) {
