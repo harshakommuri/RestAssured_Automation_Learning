@@ -1,6 +1,7 @@
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import payload.AddBody;
+import payload.ReusableMethods;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -60,7 +61,7 @@ public class RestAssured2 {
 		.extract().response().asString();
 		
 		//System.out.println(response1);
-		JsonPath js2 = new JsonPath(response1);
+		JsonPath js2 = ReusableMethods.rawToJson(response1);
 		String newAddress = js2.getString("address");
 		System.out.println(newAddress);
 		Assert.assertEquals(newAddress, "70 Summer walk, USA");
