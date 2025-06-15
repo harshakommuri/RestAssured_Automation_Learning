@@ -21,5 +21,8 @@ public class Basics {
 			.log().all()
 			.assertThat().statusCode(200)
 			.body("scope", equalTo("APP")); // ✅ statusCode expects int, not String
+		
+		
 	}
+	
 }
