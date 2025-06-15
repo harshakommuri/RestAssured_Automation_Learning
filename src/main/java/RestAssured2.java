@@ -5,6 +5,8 @@ import payload.AddBody;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
+import org.testng.Assert;
+
 
 public class RestAssured2 {
 
@@ -61,6 +63,7 @@ public class RestAssured2 {
 		JsonPath js2 = new JsonPath(response1);
 		String newAddress = js2.getString("address");
 		System.out.println(newAddress);
+		Assert.assertEquals(newAddress, "70 Summer walk, USA");
 
 	}
 }
