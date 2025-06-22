@@ -73,5 +73,14 @@ public class AddBody {
 				+ "\r\n"
 				+ "";
 	}
+	
+	public static String AddBook(String isbn, String aisle) {
+		return "\"name\":\"Learn Appium Automation with Java\",\r\n"
+				+ "\"isbn\":\""+isbn+"\",\r\n"
+				+ "\"aisle\":\""+aisle+"\",\r\n"
+				+ "\"author\":\"John foe\"\r\n"
+				+ "";
+		
+	}
 
 }

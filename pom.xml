@@ -29,5 +29,13 @@
     <version>3.0</version>
     <!-- <scope>test</scope> -->
 </dependency>
+
+<!-- Logger implementation -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.4.7</version>
+</dependency>
+
   </dependencies>
 </project>
