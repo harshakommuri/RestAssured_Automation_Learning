@@ -1,17 +1,21 @@
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import payload.AddBody;
+//import payload.AddBody;
 import payload.ReusableMethods;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import org.testng.Assert;
 
 
 public class RestAssured2 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		RestAssured.baseURI = "https://rahulshettyacademy.com";
 
@@ -21,7 +25,8 @@ public class RestAssured2 {
 
 		String response = given().log().all().queryParam("key", "qaclick123")
 				.header("Content-Type", "application/json") 
-				.body(AddBody.addData())
+				.body(new String(Files.readAllBytes(Paths.get("D:\\selenium_testing\\API Testing\\RestAssured API Testing\\Project_docs\\addPlace.json.txt"))))
+				.log().all()
 				.when()
 				.post("/maps/api/place/add/json")
 				.then()
